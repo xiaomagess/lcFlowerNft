@@ -3,3 +3,6 @@ scripts/
 test/
 verify/
 help/
+package-lock.json
+artifacts/
+cache/

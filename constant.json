@@ -1,7 +1,8 @@
 {
-    "lc_address": "0xC7143d5bA86553C06f5730c8dC9f8187a621A8D4",
-    "flower_nft_address": "0x359570B3a0437805D0a71457D61AD26a28cAC9A2",
-    "box_address": "0xc9952Fc93Fa9bE383ccB39008c786b9f94eAc95d",
-    "airdrop_box_address": "0xDde063eBe8E85D666AD99f731B4Dbf8C98F29708",
-    "sun_address": "0xD5724171C2b7f0AA717a324626050BD05767e2C6"
+    "lc_address": "0xe039608E695D21aB11675EBBA00261A0e750526c",
+    "flower_nft_address": "0x071586BA1b380B00B793Cc336fe01106B0BFbE6D",
+    "box_address": "0xe70f935c32dA4dB13e7876795f1e175465e6458e",
+    "airdrop_box_address": "0xccf1769D8713099172642EB55DDFFC0c5A444FE9",
+    "sun_address": "0x3904b8f5b0F49cD206b7d5AABeE5D1F37eE15D8d",
+    "market_address": "0x3C15538ED063e688c8DF3d571Cb7a0062d2fB18D"
 }

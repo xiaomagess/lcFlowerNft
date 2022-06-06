@@ -3,7 +3,6 @@
 pragma solidity ^0.8.0;
 import "@openzeppelin/contracts/utils/cryptography/ECDSA.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
-import "hardhat/console.sol";
 import "./Box.sol";
 
 contract AirdropBox is Ownable {
@@ -60,8 +59,8 @@ contract AirdropBox is Ownable {
             verifySignature(key, signature) == signerUser,
             "no permissions"
         );
-        boxContract.mint(msg.sender);
+        uint256 tokenId =  boxContract.mint(msg.sender);
         signatureUsed[signature] = true;
-        emit ClaimAirdrop(msg.sender,100);
+        emit ClaimAirdrop(msg.sender,tokenId);
     }
 }

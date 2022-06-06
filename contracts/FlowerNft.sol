@@ -38,6 +38,10 @@ contract FlowerNft is Authorizable, ERC721Enumerable {
         signerUser = _signerUser;
     }
 
+    function tokenIds() public view returns(uint256){
+        return _tokenIds.current();
+    }
+
     function tokensOfOwner(address _owner)
         external
         view
@@ -50,6 +54,11 @@ contract FlowerNft is Authorizable, ERC721Enumerable {
             tokensId[i] = tokenOfOwnerByIndex(_owner, i);
         }
         return tokensId;
+    }
+
+    /// @dev Allow market contracts to transfer NFT
+    function approvalForNft(address owner, address operator,bool approved) public onlyAuthorized{
+        _setApprovalForAll(owner,operator,approved);
     }
 
     function verifySignature(string calldata key, bytes calldata signature)
