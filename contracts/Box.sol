@@ -19,7 +19,7 @@ contract Box is Authorizable, ERC721Enumerable {
 
     uint256 public price = 100 * 10**18; //盲盒价格
 
-    event OpenBox(address _user, uint256 _tokenId);
+    event OpenBox(address indexed from, uint256 indexed tokenId);
 
     constructor(address _payTokenAddress, address _nftAddress)
         ERC721("LCBox", "LCBOX")

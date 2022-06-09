@@ -18,8 +18,8 @@ contract FlowerNft is Authorizable, ERC721Enumerable {
     mapping(uint256 => uint256) public tokenBreed;
     mapping(bytes => bool) public signatureUsed;
 
-    event ReceiveMint(address indexed from, uint256 indexed tokenId);
-    event Breed(address indexed from, uint256  _tokenfId,uint256 _tokenmId,uint256 tokenId);
+    event ReceiveMint(address indexed from, uint256 indexed tokenId,string key);
+    event Breed(address indexed from, uint256  tokenfId, uint256 tokenmId, uint256 tokenId);
     constructor() ERC721("FlowerNft", "FLOWERNFT") {}
 
     function _baseURI() internal view virtual override returns (string memory) {
@@ -81,7 +81,7 @@ contract FlowerNft is Authorizable, ERC721Enumerable {
         );
         uint256 tokenId =  create(msg.sender);
         signatureUsed[signature] = true;
-        emit ReceiveMint(msg.sender,tokenId);
+        emit ReceiveMint(msg.sender,tokenId,key);
     }
 
     function mint(address _user) public onlyAuthorized returns (uint256) {
