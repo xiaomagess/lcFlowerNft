@@ -16,8 +16,7 @@ contract Box is Authorizable, ERC721Enumerable {
     uint256 public startTime;
     ERC20 public payTokenContract;
     FlowerNft public nftContract;
-
-    uint256 public price = 100 * 10**18; //盲盒价格
+    uint256 public price;
 
     event OpenBox(address indexed from, uint256 indexed tokenId);
 
@@ -107,7 +106,7 @@ contract Box is Authorizable, ERC721Enumerable {
         require(ownerOf(_tokenId) == msg.sender, "_tokenId not yours");
         _burn(_tokenId);
         tokenId = nftContract.mint(msg.sender);
-        emit OpenBox(msg.sender, _tokenId);
+        emit OpenBox(msg.sender, tokenId);
     }
 
     function withdraw(address _user) public onlyOwner {
